@@ -263,11 +263,12 @@
 %% Make the style for Chapters and sections
 \makechapterstyle{article-4-sans}{
 %  \setsecheadstyle{\LARGE\sffamily\MakeLowercase}
-  \newcommand{\letterspacing}{\addfontfeatures{LetterSpace=10}}
+  \newcommand{\letterspacing}{\addfontfeatures{LetterSpace=8}}
   \setsecheadstyle{\Large\sffamily\letterspacing\MakeLowercase}
-  \setsubsecheadstyle{\normalsize\sffamily\itshape} 
-  \setaftersubsubsecskip{-1em}
-  \setsubsubsecheadstyle{\small}
+  \setaftersubsecskip{0.25em}
+  \setsubsecheadstyle{\large\sffamily\letterspacing\MakeLowercase} 
+  \setaftersubsubsecskip{0.1em}
+  \setsubsubsecheadstyle{\color{gray}}
   \renewcommand{\printchaptername}{} 
   \renewcommand{\chapternamenum}{} 
   \renewcommand{\chapnumfont}{\chaptitlefont} 
