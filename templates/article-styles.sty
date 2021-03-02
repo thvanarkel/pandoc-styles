@@ -19,7 +19,7 @@
   \\\medskip }
 
 %% Custom hanging indent for vita items
-\def\mybibind{\hangindent=1 true cm\hangafter=1 \noindent}
+%\def\mybibind{\hangindent=1 true cm\hangafter=1 \noindent}
 
 
 %%% --------------------------------------------------
@@ -260,11 +260,34 @@
 %%% article-4-sans (AJS, but sans-serif headings) 
 %%% --------------------------------------------------
 
+%% Create styles for the hanging section header
+\newcommand{\marginbox}[1]{%
+  \parbox[t][0pt]{10em}{%
+  \Large\sffamily\letterspacing\raggedright\mbox{}\MakeLowercase{#1}}%
+}
+\newcommand{\marginhead}[1]{%
+  \smash{{\llap{\marginbox{#1}\kern3em}}}%
+}
+
 %% Make the style for Chapters and sections
 \makechapterstyle{article-4-sans}{
-%  \setsecheadstyle{\LARGE\sffamily\MakeLowercase}
+  \nouppercaseheads
   \newcommand{\letterspacing}{\addfontfeatures{LetterSpace=8}}
-  \setsecheadstyle{\Large\sffamily\letterspacing\MakeLowercase}
+  
+  % Layout for hanging section headers
+  \settrims{0pt}{0pt}  
+  \settypeblocksize{562pt}{330pt}{*}
+  \setlrmargins{200pt}{*}{*}
+  \setulmargins{114pt}{*}{*}
+  \setheadfoot{12pt}{24pt}
+  \setheaderspaces{*}{24pt}{*}
+  \checkandfixthelayout
+  
+  \setsecindent{0em}
+  \setsecheadstyle{\marginhead}
+  \setbeforesecskip{1em}
+  \setaftersecskip{0em}
+  
   \setaftersubsecskip{0.25em}
   \setsubsecheadstyle{\large\sffamily\letterspacing\MakeLowercase} 
   \setaftersubsubsecskip{0.1em}
@@ -284,13 +307,13 @@
   % \settocdepth{chapter}
   \maxsecnumdepth{chapter} 
   \setsecnumdepth{chapter}
-
-  %% reduce skip after section heading
-  \setaftersecskip{1.7ex}
-  
-  %% set name of bibliography to 'references'
-  %% \renewcommand{\bibname}{\mdseries\Large\sffamily References}
-
+%
+%  %% reduce skip after section heading
+%  \setaftersecskip{1.7ex}
+%  
+%  %% set name of bibliography to 'references'
+%  %% \renewcommand{\bibname}{\mdseries\Large\sffamily References}
+%
   % % Title flush left
   \pretitle{\par\vskip 3em 
     \begin{flushleft}\LARGE\sffamily\mdseries\letterspacing}
@@ -299,8 +322,8 @@
     \postauthor{\end{flushleft}}
   \predate{\begin{flushleft}\normalsize}
     \postdate{\end{flushleft}}
-  
-  %% 'abstract' bigger skip from title
+%  
+%  %% 'abstract' bigger skip from title
   \renewcommand{\abstractname}{}
   \renewcommand{\abstractnamefont}{\normalfont\scriptsize}
   \renewcommand{\abstracttextfont}{\normalfont\scriptsize}
@@ -308,7 +331,6 @@
 
   
 }
-
 
 %%% --------------------------------------------------
 %%% Style: article-5 (Bold main heads)
