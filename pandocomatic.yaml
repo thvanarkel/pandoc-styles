@@ -65,21 +65,22 @@ templates:
     pandoc:
       from: markdown
       to: latex
-      template: templates/custom.latex
-      toc: true
-      toc-depth: 4
-      base-header-level: 2
-    metadata: 
-      mainfont: 'Charter'
-      sansfont: 'Avenir Next'
-      monofont: 'Menlo'
-      CJKmainfont: 'Charter'
-      lang: 'en-GB'
-      papersize: 'A4'
-      documentclass: 'article'
-      fontsize: '12pt'
-      linestretch: '1.75'
-      geometry: 'margin=2cm'
+      template: templates/article.latex
+      toc: false
+      pdf-engine: xelatex
+      #toc-depth: 4
+      #base-header-level: 2
+    # metadata: 
+    #   mainfont: 'Charter'
+    #   sansfont: 'Avenir Next'
+    #   monofont: 'Menlo'
+    #   CJKmainfont: 'Charter'
+    #   lang: 'en-GB'
+    #   papersize: 'A4'
+    #   documentclass: 'article'
+    #   fontsize: '12pt'
+    #   linestretch: '1.75'
+    #   geometry: 'margin=2cm'
 #######################################
   paper-refs-pdf:
     #extends: ['paper-refs-latex'] #we can inherit from other templates
