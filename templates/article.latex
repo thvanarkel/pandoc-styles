@@ -393,11 +393,11 @@ $if(csl-refs)$
  {% don't indent paragraphs
   \setlength{\parindent}{0pt}
   % turn on hanging indent if param 1 is 1
-  \ifodd #1 \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces\fi
+%  \ifodd #1 \everypar{\setlength{\hangindent}{\cslhangindent}}\fi
   % set entry spacing
-  \ifnum #2 > 0
-  \setlength{\parskip}{#2\baselineskip}
-  \fi
+%  \ifnum #2 > 0
+  \setlength{\parskip}{1\baselineskip}
+%  \fi
  }%
  {}
 \usepackage{calc}
